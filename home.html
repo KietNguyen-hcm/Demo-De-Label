@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheet.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/@barba/core"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; /* tự crop */
+            object-position: 80% 20%;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            z-index: 30;
+            pointer-events: auto;
+        }
+
+        .swiper-button-next {
+            background-image: url('arrow-right.png');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .swiper-button-prev {
+            background-image: url('arrow-left.png');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            transition: 0.3s;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100dvh;
+        }
+
+        .swiper-wrapper {
+            height: 100%;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    }
+    </script>
+    <script>
+        document.addEventListener("click", function(e) {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+            menu.classList.remove("active");
+            hamburger.classList.remove("active");
+        }
+        });
+    </script>
+    <title>De Label</title>
+</head>
+<body data-barba="wrapper">
+    <header>
+        <section class="logo">
+            <a href="home.html">
+                <img src="img/logo.png">
+             </a>
+        </section>
+
+        <!-- Nút hamburger -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="menu">
+            <a href="home.html">HOME</a>
+            <a href="aboutUs.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    <main data-barba="container" data-barba-namespace="home">
+        <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="talentMinh.html">
+                    <img src="img/minh.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="talentVy.html">
+                    <img src="img/thanhPhoLimDim.jpg">
+                </a>
+            </div>
+        </div>
+        <!-- Nút điều hướng -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Dấu chấm -->
+        <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true, // chạy vòng lặp
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 7000, // tự động chuyển sau 3 giây
+                disableOnInteraction: false,
+            },
+        });
+        </script>
+    </main>
+</body>
+</html>

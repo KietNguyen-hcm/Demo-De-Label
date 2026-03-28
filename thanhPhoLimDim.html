@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheet.css">
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <title>De Label</title>
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    }
+    </script>
+    <script>
+        document.addEventListener("click", function(e) {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+            menu.classList.remove("active");
+            hamburger.classList.remove("active");
+        }
+        });
+    </script>
+    <title>De Label</title>
+</head>
+<body data-barba="wrapper">
+    <header>
+        <section class="logo">
+            <a href="home.html">
+                <img src="img/logo.png">
+             </a>
+        </section>
+
+        <!-- Nút hamburger -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="menu">
+            <a href="home.html">HOME</a>
+            <a href="aboutUs.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main data-barba="container" data-barba-namespace="home">
+        <section class="desktopDisplay">
+            <div class="productsBackgroundVideo">
+                <video width=100% autoplay muted loop playsinline>
+                    <source src="img/mvCut.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video
+                </video>
+                <div class="overlay"></div>
+                <div class="miniMenu">
+                    <ul>
+                        <li class="tpldMiniMenu">
+                            <a href="thanhPhoLimDim.html">THÀNH PHỐ LIM DIM</a>
+                        </li>
+                        <li>
+                            <a href="guiEmBuuThiep.html">GỬI EM BƯU THIẾP</a>
+                        </li>
+                        <li>
+                            <a href="dungCoDiMotMinh.html">ĐỪNG CỐ ĐI MỘT MÌNH</a>
+                        </li>
+                        <li>
+                            <a href="choEmMangNangSang.html">CHỜ EM MANG NẮNG SANG</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overlayMark">
+                    <p class="name">
+                        EP
+                    </p>
+                    <p class="name">
+                        THANH PHO LIM DIM
+                    </p>
+                </div>
+                <div class="videoOverlayMain">
+                    <video controls>
+                        <source src="thanhPhoLimDimFull.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video
+                    </video>
+                </div>
+                <div class="text">Nội dung nổi bật</div>
+            </div>
+        </section>
+
+        <section class="mobileDisplay">
+            <div class="miniMenuMobile">
+                <ul>
+                    <li class="tpldMiniMenu">
+                        <a href="thanhPhoLimDim.html">THÀNH PHỐ LIM DIM</a>
+                    </li>
+                    <li>
+                        <a href="guiEmBuuThiep.html">GỬI EM BƯU THIẾP</a>
+                    </li>
+                    <li>
+                        <a href="dungCoDiMotMinh.html">ĐỪNG CỐ ĐI MỘT MÌNH</a>
+                    </li>
+                    <li>
+                        <a href="choEmMangNangSang.html">CHỜ EM MANG NẮNG SANG</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mvThumbMobile">
+                <a href="https://www.youtube.com/watch?v=Y9PnMww0KQM" target="_blank">
+                    <img src="img/thanhPhoLimDim.jpg">
+                    <span class="play-btn"></span>
+                </a>
+            </div>
+            <div class="epName">
+                <p>EP</p>
+                <p>THANH PHO LIM DIM</p>
+            </div>
+            <div class="container">
+                <img src="img/dungCoDiMotMinh.jpg">
+                <img src="img/guiEmBuuThiep.jpg">
+                <img src="img/nangSang.jpg">
+                <img src="img/dungCoDiMotMinh.jpg">
+                <img src="img/guiEmBuuThiep.jpg">
+                <img src="img/nangSang.jpg">
+                <img src="img/dungCoDiMotMinh.jpg">
+                <img src="img/guiEmBuuThiep.jpg">
+                <img src="img/nangSang.jpg">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

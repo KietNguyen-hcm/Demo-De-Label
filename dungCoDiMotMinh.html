@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheet.css">
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    }
+    </script>
+    <script>
+        document.addEventListener("click", function(e) {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+            menu.classList.remove("active");
+            hamburger.classList.remove("active");
+        }
+        });
+    </script>
+    <title>De Label</title>
+</head>
+<body data-barba="wrapper">
+    <header>
+        <section class="logo">
+            <a href="home.html">
+                <img src="img/logo.png">
+             </a>
+        </section>
+
+        <!-- Nút hamburger -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="menu">
+            <a href="home.html">HOME</a>
+            <a href="aboutUs.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    <main data-barba="container" data-barba-namespace="home">
+        <section class="desktopDisplay">
+            <div class="productsBackgroundVideo">
+                <video width=100% controls>
+                    <source src="dungCoDiMotMinhFull.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video
+                </video>
+                <img src="img/dungCoDiMotMinh.jpg" class="overlayImage">
+                <div class="overlay"></div>
+                <div class="miniMenu">
+                    <ul>
+                        <li>
+                            <a href="thanhPhoLimDim.html">THÀNH PHỐ LIM DIM</a>
+                        </li>
+                        <li>
+                            <a href="guiEmBuuThiep.html">GỬI EM BƯU THIẾP</a>
+                        </li>
+                        <li class="dcdmmMiniMenu">
+                            <a href="dungCoDiMotMinh.html">ĐỪNG CỐ ĐI MỘT MÌNH</a>
+                        </li>
+                        <li>
+                            <a href="choEmMangNangSang.html">CHỜ EM MANG NẮNG SANG</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="overlayMark">
+                    <p class="name">
+                        EP
+                    </p>
+                    <p class="name">
+                        THANH PHO LIM DIM
+                    </p>
+                </div>
+                <div class="text">Nội dung nổi bật</div>
+            </div>
+        </section>
+        
+        <section class="mobileDisplay">
+            <div class="miniMenuMobile">
+                <ul>
+                    <li>
+                        <a href="thanhPhoLimDim.html">Thanh Pho Lim Dim</a>
+                    </li>
+                    <li>
+                        <a href="guiEmBuuThiep.html">Gui Em Buu Thiep</a>
+                    </li>
+                    <li class="dcdmmMiniMenu">
+                        <a href="dungCoDiMotMinh.html">Dung Co Di Mot Minh</a>
+                    </li>
+                    <li>
+                        <a href="choEmMangNangSang.html">Cho Em Mang Nang Sang</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mvThumbMobile">
+                <a href="https://www.youtube.com/watch?v=FBOV5Tzjyz0" target="_blank">
+                    <img src="img/dungCoDiMotMinh.jpg">
+                    <span class="play-btn"></span>
+                </a>
+            </div>
+            <div class="epName">
+                <p>EP</p>
+                <p>THANH PHO LIM DIM</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

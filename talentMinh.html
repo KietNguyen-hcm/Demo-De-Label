@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheet.css">
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    }
+    </script>
+    <script>
+        document.addEventListener("click", function(e) {
+        const menu = document.getElementById("menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+            menu.classList.remove("active");
+            hamburger.classList.remove("active");
+        }
+        });
+    </script>
+    <title>De Label</title>
+</head>
+<body data-barba="wrapper">
+    <header>
+        <section class="logo">
+            <a href="home.html">
+                <img src="img/logo.png">
+             </a>
+        </section>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="menu">
+            <a href="home.html">HOME</a>
+            <a href="aboutUs.html">ABOUT US</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    <main data-barba="container" data-barba-namespace="home">
+        <section class="aboutTalentMinh">
+            <div class="imgTalentMinh">
+                <img src="img/talentMinh.jpg">
+            </div>
+            <div class="describeTalentMinh">
+                <p>This is the description about Nguyen Phuc Nhat Minh askdjfhkrlja jasdhkasjbdf thrabsdjk aksjhf aksjdfn aklhf a</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
