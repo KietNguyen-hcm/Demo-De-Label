@@ -533,10 +533,10 @@ h1.productsTitle{
 
 .productsBackgroundVideo .text {
     position: absolute;
-    top: 70%; left: 50%;
+    top: 75%; left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 32px;
+    font-size: 22px;
     z-index: 2; /* nằm trên overlay */
 }
 
