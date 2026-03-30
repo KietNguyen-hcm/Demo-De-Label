@@ -137,6 +137,7 @@ nav a {
     flex-direction: column;
     padding-top: 80px;
     transition: 0.3s;
+    display: flex;
   }
 
   /* Khi mở */
@@ -151,6 +152,25 @@ nav a {
   .logo img {
     height: 50px;
   }
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+/* Hover */
+nav a:hover {
+  background: #f97316;
+  color: white;
+}
+
+/* Active (trang hiện tại) */
+nav a.active {
+  background: #545454;
+  color: white;
+  font-weight: 600;
+}
 }
 
 
