@@ -1,3 +1,22 @@
+function updateActiveNav() {
+  const links = document.querySelectorAll("nav a");
+  let current = window.location.pathname.split("/").pop();
+
+  if (current === "") current = "index.html";
+
+  links.forEach(link => {
+    link.classList.remove("active");
+
+    const href = link.getAttribute("href");
+
+    if (current.includes(href.replace(".html", ""))) {
+  link.classList.add("active");
+}
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateActiveNav);
+
 let swiper;
 
 function initSwiper() {
@@ -82,6 +101,7 @@ barba.init({
       }
 
       initSwiper();
+      updateActiveNav();
     }
   }]
 });
@@ -103,3 +123,4 @@ document.addEventListener("click", function(e) {
   }
 });
 
+document.addEventListener("DOMContentLoaded", updateActiveNav);
